@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col text-center">
+    <h2>Contador padre</h2>
+    <h2>{{ cont$ | async }}</h2>
+    <button (click)="incrementar()" class="btn btn-outline-primary">
+      Incrementar
+    </button>
+    <button (click)="decrementar()" class="btn btn-outline-info">
+      Decrementar
+    </button>
+  </div>
+</div>
+<app-son></app-son>
