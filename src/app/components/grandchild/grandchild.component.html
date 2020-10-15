@@ -1,7 +1,10 @@
 <hr />
 <div class="row">
   <div class="col text-center">
-    <h4>Contador padre</h4>
-    <h4>{{ cont$ }}</h4>
+    <h4>Contador nieto</h4>
+    <h4>{{ cont$ | async }}</h4>
+    <button (click)="resetear()" class="btn btn-outline-danger">
+      Resetear
+    </button>
   </div>
 </div>

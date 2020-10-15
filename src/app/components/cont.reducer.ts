@@ -7,11 +7,9 @@ const _contadorReducer = createReducer(
   initialState,
   on(fromContador.INCREMENTAR,(state)=> state + 1),
   on(fromContador.DECREMENTAR,(state)=> state - 1),
-  on(fromContador.MULTIPLICAR,(state,{payload})=> {
-    console.log(state,payload);
-    return state * payload
-  }),
+  on(fromContador.MULTIPLICAR,(state,{payload})=> state * payload),
   on(fromContador.DIVIDIR,(state,payload)=> state / payload.payload),
+  on(fromContador.RESET,(state)=> 0)
   );
 
   export function contadorReducer(state,action){

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { IAppState } from '../app.reducers';
+import { RESET } from '../cont.actions';
 
 @Component({
   selector: 'app-grandchild',
@@ -9,9 +12,13 @@ import { Observable } from 'rxjs';
 })
 export class GrandchildComponent implements OnInit {
   cont$:Observable<number>;
-  constructor() { }
+  constructor(private store:Store<IAppState>) {
+    this.cont$ = store.select('contador');
+   }
 
   ngOnInit(): void {
   }
-
+  resetear(){
+    this.store.dispatch(RESET());
+  }
 }
