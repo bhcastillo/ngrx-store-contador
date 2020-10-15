@@ -6,9 +6,12 @@ export const initialState = 10;
 const _contadorReducer = createReducer(
   initialState,
   on(fromContador.INCREMENTAR,(state)=> state + 1),
-  on(fromContador.DECREMENTAR,(state)=> state + -1),
-  on(fromContador.MULTIPLICAR,(state)=> state + 1),
-  on(fromContador.DIVIDIR,(state)=> state + 1),
+  on(fromContador.DECREMENTAR,(state)=> state - 1),
+  on(fromContador.MULTIPLICAR,(state,{payload})=> {
+    console.log(state,payload);
+    return state * payload
+  }),
+  on(fromContador.DIVIDIR,(state,payload)=> state / payload.payload),
   );
 
   export function contadorReducer(state,action){

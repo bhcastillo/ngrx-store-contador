@@ -19,7 +19,6 @@ export class FatherComponent implements OnInit {
   ngOnInit(): void {
   }
   incrementar(){
-    
     this.store.dispatch(INCREMENTAR());
   }
   decrementar(){
